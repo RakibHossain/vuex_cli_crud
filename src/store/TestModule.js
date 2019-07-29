@@ -2,7 +2,54 @@ const TestModule = {
 	state: {
 		name: '',
 		count: 0,
-		images: []
+		images: [],
+		countries: [
+			{
+				'id': '1',
+				'name': 'Bangladesh'
+			},
+			{
+				'id': '2',
+				'name': 'Pakistan'
+			},
+			{
+				'id': '3',
+				'name': 'India'
+			}
+		],
+		cities: [
+			{
+				'id': '1',
+				'country_id': '1',
+				'name': 'Dhaka'
+			},
+			{
+				'id': '2',
+				'country_id': '1',
+				'name': 'Chittagong'
+			},
+			{
+				'id': '3',
+				'country_id': '2',
+				'name': 'Islamabad'
+			},
+			{
+				'id': '4',
+				'country_id': '2',
+				'name': 'Karachi'
+			},
+			{
+				'id': '5',
+				'country_id': '3',
+				'name': 'Delhi'
+			},
+			{
+				'id': '5',
+				'country_id': '3',
+				'name': 'Kolkata'
+			}
+		],
+		country_cities: []
 	},
 	mutations: {
 		CHANGE(state, name) {
@@ -21,6 +68,9 @@ const TestModule = {
 		},
 		REMOVE_FILE(state, index) {
 			state.images.splice(index, 1)
+		},
+		GET_COUNTRY_CITY(state, country_id) {
+			console.log(country_id)
 		}
 	},
 	actions: {
@@ -46,6 +96,9 @@ const TestModule = {
 		},
 		removeFile(context, index) {
 			context.commit('REMOVE_FILE', index)
+		},
+		getCountryCity(context, country_id) {
+			context.commit('GET_COUNTRY_CITY', country_id)
 		}
 	},
 	getters: {
@@ -57,6 +110,12 @@ const TestModule = {
 		},
 		images(state) {
 			return state.images
+		},
+		countries(state) {
+			return state.countries
+		},
+		country_cities(state) {
+			return state.country_cities
 		}
 	}
 }

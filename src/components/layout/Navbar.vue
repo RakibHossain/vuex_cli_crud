@@ -13,6 +13,9 @@
 			<li class="nav-item">
 				<router-link to="/axios" class="nav-link">Axios</router-link>
 			</li>
+			<li class="nav-item">
+				<router-link to="/gql" class="nav-link">GraphQL</router-link>
+			</li>
 		</ul>
 
 		<marquee class="scroll">This is basic Vuex CLI CRUD</marquee>

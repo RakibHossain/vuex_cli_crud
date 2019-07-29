@@ -7,6 +7,7 @@ Vue.use(VueRouter)
 import Home from './components/Home.vue'
 import Form from './components/views/Form.vue'
 import Todos from './components/views/Todos.vue'
+import Apollo from './components/ApolloExample.vue'
 
 const router = new VueRouter({
 	mode: 'history',
@@ -26,6 +27,11 @@ const router = new VueRouter({
 			path: '/axios', 
 			component: Todos, 
 			name: 'axios'
+		},
+		{ 
+			path: '/gql', 
+			component: Apollo, 
+			name: 'gql'
 		},
 	]
 })
